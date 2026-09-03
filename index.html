@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding Proposals</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, #1a5276, #2980b9); color: white; padding: 24px 40px 0; position: relative; }
+        .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+        .header h1 { font-size: 1.4em; }
+        .header .zh-title { font-size: 1em; opacity: 0.85; margin-top: 3px; }
+        .toggle-btn { background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 7px 18px; border-radius: 25px; cursor: pointer; font-size: 0.85em; font-weight: 600; transition: all 0.3s; }
+        .toggle-btn:hover { background: rgba(255,255,255,0.35); }
+        .dl-btn { background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 7px 16px; border-radius: 25px; text-decoration: none; font-size: 0.85em; font-weight: 600; transition: all 0.3s; white-space: nowrap; }
+        .dl-btn:hover { background: rgba(255,255,255,0.35); }
+        .tabs { display: flex; gap: 0; margin-top: 18px; }
+        .tab-btn { background: rgba(255,255,255,0.15); border: none; color: rgba(255,255,255,0.7); padding: 10px 28px; cursor: pointer; font-size: 0.9em; font-weight: 600; border-radius: 8px 8px 0 0; transition: all 0.2s; }
+        .tab-btn.active { background: #f0f2f5; color: #1a5276; }
+        .tab-btn:hover:not(.active) { background: rgba(255,255,255,0.25); color: white; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; padding-top: 25px; }
+        .card { background: white; border-radius: 10px; padding: 28px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .card h2 { font-size: 1.1em; color: #1a5276; border-bottom: 2px solid #2980b9; padding-bottom: 7px; margin-bottom: 14px; }
+        .zh-label { color: #2980b9; font-weight: 600; font-size: 0.85em; margin-top: 6px; }
+        .info-grid { display: grid; grid-template-columns: 220px 1fr; gap: 7px 12px; }
+        .info-grid dt { font-weight: 600; color: #555; }
+        .info-grid dd { color: #333; }
+        .project-section { margin-bottom: 16px; }
+        .project-section h3 { font-size: 0.98em; color: #2980b9; margin-bottom: 5px; }
+        .project-section p, .project-section ul { font-size: 0.93em; color: #444; }
+        .project-section ul { margin-left: 18px; margin-top: 4px; }
+        .zh-text { color: #888; font-size: 0.86em; margin-top: 4px; line-height: 1.5; }
+        body.hide-zh .zh-text,
+        body.hide-zh .zh-label,
+        body.hide-zh .header .zh-title,
+        body.hide-zh .zh-foot { display: none; }
+        .footer { display: flex; justify-content: space-between; font-size: 0.93em; color: #555; padding-top: 14px; border-top: 1px solid #ddd; }
+        .zh-foot { color: #999; font-size: 0.83em; }
+        .answer { color: #1a5276; font-weight: 600; background: #eaf2f8; padding: 1px 4px; border-radius: 3px; }
+        .given { color: #888; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div>
+                <h1>LAN4103_IT_Teaching of Funding Proposals</h1>
+                <div class="zh-title" id="zhMainTitle">LAN4103_IT_资助提案教学</div>
+            </div>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <a href="file:///Users/rebecca/Downloads/Data%20File.pdf" download class="dl-btn">Data File & Question Paper</a>
+                <button class="toggle-btn" onclick="toggleLang()">中文 / English</button>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(0)">Sample Funding Proposal</button>
+            <button class="tab-btn" onclick="switchTab(1)">Practice (Island Esports)</button>
+            <button class="tab-btn" onclick="switchTab(2)">Supplementary Notes for CA</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- ==================== TAB 1: SoftTech Solutions ==================== -->
+        <div class="tab-content active" id="tab0">
+            <div class="card">
+                <h2>Part A: Organisation Details</h2>
+                <div class="zh-label" id="t1zhPA">甲部：机构详情</div>
+                <dl class="info-grid">
+                    <dt>Name of Organisation:</dt><dd>SoftTech Solutions</dd>
+                    <dt>Address:</dt><dd>G/F 204 Sheung On Street, Chai Wan</dd>
+                    <dt>Contact Person:</dt><dd>Lee Chak On, Angus, Assistant Information Security Officer</dd>
+                    <dt>Office Number:</dt><dd>2809 7654</dd>
+                    <dt>Email:</dt><dd>anguslee@sts.com.hk</dd>
+                </dl>
+                <div class="zh-text" id="t1zhOrg">
+                    <dl class="info-grid">
+                        <dt>机构名称：</dt><dd>SoftTech Solutions</dd>
+                        <dt>地址：</dt><dd>柴湾常安街204号地下</dd>
+                        <dt>联络人：</dt><dd>李卓安（ Angus ），助理资讯保安主任</dd>
+                        <dt>办公电话：</dt><dd>2809 7654</dd>
+                        <dt>电邮：</dt><dd>anguslee@sts.com.hk</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Part B: Proposal</h2>
+                <div class="zh-label" id="t1zhPB">乙部：提案</div>
+
+                <div class="project-section">
+                    <h3>Organisation Information</h3>
+                    <p>Established in 2010, SoftTech Solutions is a Hong Kong-based software development company specialising in providing software solutions for businesses of all sizes.</p>
+                    <div class="zh-text" id="t1zh1a">SoftTech Solutions 成立于2010年，是一家总部位于香港的软件开发公司，专注于为各类规模的企业提供软件解决方案。</div>
+                    <p>We also offer a range of consulting services which serve to help our clients improve operational efficiency.</p>
+                    <div class="zh-text" id="t1zh1b">我们亦提供一系列咨询服务，协助客户提升营运效率。</div>
+                </div>
+                <div class="project-section">
+                    <h3>Name of Project</h3>
+                    <p>Cybersecurity Enhancement Project</p>
+                    <div class="zh-text" id="t1zh2">网络安全提升项目</div>
+                </div>
+                <div class="project-section">
+                    <h3>Project Aim</h3>
+                    <p>Cyber threats have become increasingly widespread. As such, we are planning to upgrade our cybersecurity infrastructure with the aim of strengthening our clients' data protection against evolving digital threats.</p>
+                    <div class="zh-text" id="t1zh3">网络威胁日益猖獗。因此，我们计划升级网络安全基础设施，旨在加强客户数据保护，以应对不断演变的数码威胁。</div>
+                </div>
+                <div class="project-section">
+                    <h3>Project Details</h3>
+                    <p><strong>a. Implementation</strong></p>
+                    <p>The project will be completed in three phases, each lasting four months:</p>
+                    <div class="zh-text" id="t1zh4a">项目将分三个阶段进行，每阶段为期四个月：</div>
+                    <ul>
+                        <li><strong>Phase 1:</strong> Review network architecture and conduct a risk assessment of current systems.</li>
+                    </ul>
+                    <div class="zh-text" id="t1zh4b"><ul><li><strong>第一阶段：</strong>检视网络架构，并对现有系统进行风险评估。</li></ul></div>
+                    <ul>
+                        <li><strong>Phase 2:</strong> Install next-generation firewalls and arrange staff training on cybersecurity best practices.</li>
+                    </ul>
+                    <div class="zh-text" id="t1zh4c"><ul><li><strong>第二阶段：</strong>安装新一代防火墙，并安排员工接受网络安全最佳实践培训。</li></ul></div>
+                    <ul>
+                        <li><strong>Phase 3:</strong> Establish a continuous monitoring system and conduct simulated cyberattack drills to evaluate effectiveness.</li>
+                    </ul>
+                    <div class="zh-text" id="t1zh4d"><ul><li><strong>第三阶段：</strong>建立持续监控系统，并进行模拟网络攻击演练，以评估升级成效。</li></ul></div>
+                    <p style="margin-top:10px"><strong>b. Amount of Funding Requested</strong></p>
+                    <p>It is estimated that a total of $800,000 will be required for the project. For details of the breakdown, please refer to the attachment.</p>
+                    <div class="zh-text" id="t1zh5">项目预计所需资金总额为800,000港元。详情请参阅附件。</div>
+                </div>
+                <div class="project-section">
+                    <h3>Justification for Funding</h3>
+                    <p>The cybersecurity enhancements will significantly reduce the risk of data breaches and cyberattacks, safeguarding our clients' sensitive information.</p>
+                    <div class="zh-text" id="t1zh6a">网络安全提升将大幅降低数据泄露及网络攻击的风险，保障客户的敏感资料。</div>
+                    <p>Staff will gain expertise in cutting-edge security practices, enhancing service quality and client trust.</p>
+                    <div class="zh-text" id="t1zh6b">员工将掌握前沿保安技术的专业知识，提升服务质量及客户信任。</div>
+                    <p>The project aligns closely with the mission of the Innovation and Technology Bureau and contributes to raising cybersecurity standards in the IT industry.</p>
+                    <div class="zh-text" id="t1zh6c">本项目与创新及科技局的使命高度契合，有助提升资讯科技行业的网络安全标准。</div>
+                </div>
+                <div class="project-section">
+                    <h3>Supplementary Information</h3>
+                    <p>We understand there may be concerns about potential disruptions during the upgrade process. We will spare no effort in scheduling system updates during off-peak hours and conducting thorough testing, guaranteeing seamless operations for our clients.</p>
+                    <div class="zh-text" id="t1zh7">我们理解外界可能对升级过程中可能出现的干扰有所顾虑。我们将不遗余力地安排系统更新在非繁忙时段进行，并进行全面测试，确保客户运作不受影响。</div>
+                    <p style="margin-top:8px">With the implementation of these robust cybersecurity measures to protect clients' data, we strongly believe that our service quality will be enhanced greatly, contributing to higher industry standards.</p>
+                    <div class="zh-text" id="t1zh8">随着这些强有力的网络安全措施的实施以保护客户数据，我们坚信服务质量将大幅提高，为行业更高标准作出贡献。</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="footer">
+                    <span><strong>Submission Date:</strong> 27 Nov 202- <span class="zh-foot" id="t1zhF1">提交日期：202-年11月27日</span></span>
+                    <span><strong>Signature:</strong> Angus Lee <span class="zh-foot" id="t1zhF2">签署：李卓安</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 2: Answer Key ==================== -->
+        <div class="tab-content" id="tab1">
+            <div class="card">
+                <h2>Answer Key: Practice (Island Esports)</h2>
+                <div class="zh-label" id="t2zhTitle">答案指引：练习（Island Esports）</div>
+                <p style="font-size:0.9em; color:#666; margin-top:6px;">Hong Kong Cyberport Funding Scheme for Esports Tournament | Island Esports (Semester 1, 2025–2026)</p>
+                <div class="zh-text" id="t2zhSub">香港数码港电竞比赛资助计划 | Island Esports（2025–2026学年第一学期）</div>
+            </div>
+
+            <div class="card">
+                <h2>Organization Details (Part A)</h2>
+                <div class="zh-label" id="t2zhPA">甲部：机构详情</div>
+                <dl class="info-grid">
+                    <dt>Name of organization:</dt><dd>Island Esports</dd>
+                    <dt>Address:</dt><dd>[Given]</dd>
+                    <dt>Contact Person:</dt><dd>Jack Wong (Event Supervisor)</dd>
+                    <dt>Office Phone:</dt><dd>3928-2150</dd>
+                    <dt>Email:</dt><dd>jackwong@iesports.com</dd>
+                </dl>
+                <div class="zh-text" id="t2zhOrg">
+                    <dl class="info-grid">
+                        <dt>机构名称：</dt><dd>Island Esports</dd>
+                        <dt>地址：</dt><dd>[已提供]</dd>
+                        <dt>联络人：</dt><dd>黄杰克（活动督导）</dd>
+                        <dt>办公电话：</dt><dd>3928-2150</dd>
+                        <dt>电邮：</dt><dd>jackwong@iesports.com</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Funding Proposal Application Form</h2>
+                <div class="zh-label" id="t2zhForm">资助提案申请表</div>
+
+                <div class="project-section">
+                    <h3>Organizational Information</h3>
+                    <p><span class="answer">Formed in 2013,</span> <span class="answer">Island Esports</span> <span class="answer">is a</span> <span class="answer">gaming association</span> <span class="answer">dedicated to</span> <span class="answer">nurturing esports talent</span>. <span class="answer">We also offer a range of esport games and competitions</span> <span class="answer">to nurture positive gaming culture</span>.</p>
+                    <div class="zh-text" id="t2zh1"><span class="answer">Island Esports 成立于2013年，是一个致力于培养电竞人才的电竞协会。我们亦举办各类电竞游戏及比赛，以培育正面的游戏文化。</span></div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Name of Project</h3>
+                    <p>Large-scale esports tournament <span class="given">[Given]</span></p>
+                    <div class="zh-text" id="t2zh2">大型电竞比赛 <span class="given">[已提供]</span></div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Project Aim</h3>
+                    <p><span class="given">In light of the increasing popularity of esports around the world, we plan to raise the popularity of esports in Hong Kong and promote the industry and foster positive perception of competitive gaming among the public. [Given]</span></p>
+                    <div class="zh-text" id="t2zh3"><span class="given">鉴于电竞在全球日益普及，我们计划提升电竞在香港的普及度，推广电竞行业，并在公众中培养对竞技游戏的正面看法。[已提供]</span></div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Implementation</h3>
+                    <p>The project will be completed in <span class="answer">three</span> stages, each lasting <span class="answer">three</span> weeks.</p>
+                    <div class="zh-text" id="t2zh4a">项目将分<span class="answer">三</span>个阶段进行，每阶段为期<span class="answer">三</span>周。</div>
+                    <ul>
+                        <li>In stage 1, we <span class="answer">research popular games</span> to determine <span class="answer">tournament format</span>.</li>
+                    </ul>
+                    <div class="zh-text" id="t2zh4b"><ul><li>在第一阶段，我们<span class="answer">研究热门游戏</span>，以确定<span class="answer">比赛形式</span>。</li></ul></div>
+                    <ul>
+                        <li>In stage 2, we <span class="answer">seek local gaming influencers</span> and set up <span class="answer">online registration platform</span>.</li>
+                    </ul>
+                    <div class="zh-text" id="t2zh4c"><ul><li>在第二阶段，我们<span class="answer">与本地游戏网红合作</span>，并设立<span class="answer">网上报名平台</span>。</li></ul></div>
+                    <ul>
+                        <li>In the final stage, we <span class="answer">produce promotional videos</span> and host <span class="answer">livestreamed tournament</span>.</li>
+                    </ul>
+                    <div class="zh-text" id="t2zh4d"><ul><li>在最后阶段，我们<span class="answer">制作宣传影片</span>，并举办<span class="answer">网上直播比赛</span>。</li></ul></div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Amount of Funding Requested</h3>
+                    <p>It is expected that a total of <span class="answer">HK$600,000</span> will be required for the project. Please refer to the attached document for a detailed breakdown of the costs.</p>
+                    <div class="zh-text" id="t2zh5">项目预计所需资金总额为<span class="answer">600,000港元</span>。详情请参阅附件。</div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Justification for Funding</h3>
+                    <p>The skills and dedication of the Hong Kong gamers demonstrated during the tournament will <span class="answer">foster</span> public appreciation of esports as a valuable industry. Additionally, the tournament is an opportunity for the gamers to <span class="answer">raise</span> their competitiveness. Further, the tournament and Hong Kong Cyberport <span class="answer">share</span> the same mission and values, which are to attract more people to pay attention to esports development.</p>
+                    <div class="zh-text" id="t2zh6">比赛中所展现的香港电竞选手的技能及投入精神，将<span class="answer">促进</span>公众欣赏电竞作为一个有价值的行业。此外，比赛为选手提供<span class="answer">提升</span>竞争力的机会。再者，比赛与香港数码港<span class="answer">秉持</span>相同的使命及价值观，旨在吸引更多人关注电竞发展。</div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Supplementary Information</h3>
+                    <p>We recognise that there might be technical issues due to, for example, server lag during the tournament. However, we will spare no effort in <span class="answer">securing high-performance servers</span> and conduct <span class="answer">pre-event stress tests</span> so that <span class="answer">the tournament can proceed smoothly</span>.</p>
+                    <div class="zh-text" id="t2zh7">我们承认比赛期间可能会出现技术问题，例如服务器延迟。然而，我们将不遗余力地<span class="answer">确保使用高性能服务器</span>，并进行<span class="answer">活动前压力测试</span>，以确保<span class="answer">比赛顺利进行</span>。</div>
+                    <p style="margin-top:8px"><span class="answer">We believe that our esports tournament will promote the industry and foster a positive perception of competitive gaming among the public, contributing to the growth of Hong Kong's esports community.</span></p>
+                    <div class="zh-text" id="t2zh8"><span class="answer">我们坚信，我们的电竞比赛将推广电竞行业，并在公众中培养对竞技游戏的正面看法，为香港电竞社群的发展作出贡献。</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="footer">
+                    <span><strong>Submission Date:</strong> December 16, 2025 <span class="zh-foot" id="t2zhF1">提交日期：2025年12月16日</span></span>
+                    <span><strong>Applicant Signature:</strong> Christy Cheung (Esports Event Planner) <span class="zh-foot" id="t2zhF2">签署：张嘉怡（电竞活动策划员）</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 3: 4 Steps Guide ==================== -->
+        <div class="tab-content" id="tab2">
+            <div class="card">
+                <h2>Follow the 4 Steps to Write Your 25% CA</h2>
+                <div class="zh-label" id="t3zhTitle">按照以下四个步骤撰写25%持续评估</div>
+            </div>
+
+            <div class="card">
+                <h2>Step 1: Writing Organisation Information (Unit 2)</h2>
+                <div class="zh-label" id="t3zhS1">第一步：撰写机构资料（单元二）</div>
+                <p>For writing Organisation information, identify key components on the homepage and use the following grammatical structures:</p>
+                <div class="zh-text" id="t3zhS1a">撰写机构资料时，请从主页中识别关键信息，并运用以下语法结构：</div>
+                <ul>
+                    <li><strong>Structure 1:</strong> [past participle, "-ed"] + in + Establishment/Founding/Formation year</li>
+                </ul>
+                <div class="zh-text" id="t3zhS1b1"><ul><li><strong>结构一：</strong>[过去分词] + in + 成立/创办年份</li></ul></div>
+                <ul>
+                    <li><strong>Structure 2:</strong> Organization name + is a + [business nature]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS1b2"><ul><li><strong>结构二：</strong>机构名称 + is a + [业务性质]</li></ul></div>
+                <ul>
+                    <li><strong>Structure 3:</strong> specialising in / dedicated to / committed to / devoted to / focusing on + [action / area]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS1b3"><ul><li><strong>结构三：</strong>specialising in / dedicated to / committed to / devoted to / focusing on + [行动/领域]</li></ul></div>
+                <ul>
+                    <li><strong>Structure 4:</strong> Additionally, / Also, + we organize / run / conduct / provide / offer + organization's mission / services / work</li>
+                </ul>
+                <div class="zh-text" id="t3zhS1b4"><ul><li><strong>结构四：</strong>Additionally / Also + we organize / run / conduct / provide / offer + 机构使命/服务</li></ul></div>
+                <ul>
+                    <li><strong>Structure 5:</strong> [to + verb] + purpose of the mission / services / work</li>
+                </ul>
+                <div class="zh-text" id="t3zhS1b5"><ul><li><strong>结构五：</strong>[to + 动词] + 使命/服务的目的</li></ul></div>
+
+                <h3 style="margin-top:14px; color:#1a5276;">Examples / 范例</h3>
+                <div class="project-section">
+                    <p><strong>Example 1 (InnoDesign):</strong> Formed in 2001, InnoDesign is a product design consultancy devoted to offering customised product prototyping services to local and international manufacturers.</p>
+                    <div class="zh-text" id="t3zhE1a"><strong>范例一（InnoDesign）：</strong>InnoDesign 成立于2001年，是一间产品设计顾问公司，致力于为本地及国际制造商提供定制产品原型服务。</div>
+                    <p>Also, we host community workshops to engage participants in hands-on product design activities.</p>
+                    <div class="zh-text" id="t3zhE1b">此外，我们举办社区工作坊，让参与者亲身参与产品设计活动。</div>
+                </div>
+                <div class="project-section">
+                    <p><strong>Example 2 (StyleScope):</strong> Started in 2020, StyleScope Hong Kong is a fashion media company focusing on publishing fashion and beauty magazines for style enthusiasts.</p>
+                    <div class="zh-text" id="t3zhE2a"><strong>范例二（StyleScope）：</strong>StyleScope Hong Kong 成立于2020年，是一间时尚媒体公司，专注于为时尚爱好者出版时装及美容杂志。</div>
+                    <p>Additionally, we run reader engagement campaigns to invite fashion ideas or styling tips from readers.</p>
+                    <div class="zh-text" id="t3zhE2b">此外，我们举办读者互动活动，邀请读者分享时尚创意及穿搭贴士。</div>
+                </div>
+                <div class="project-section">
+                    <p><strong>Example 3 (Island Esports):</strong> Established in 2013, Island Esports is a gaming association dedicated to nurturing esports talent in Hong Kong.</p>
+                    <div class="zh-text" id="t3zhE3a"><strong>范例三（Island Esports）：</strong>Island Esports 成立于2013年，是一个致力于培养香港电竞人才的电竞协会。</div>
+                    <p>Also, we offer a range of esport games and competitions to nurture positive gaming culture.</p>
+                    <div class="zh-text" id="t3zhE3b">此外，我们举办各类电竞游戏及比赛，以培育正面的游戏文化。</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Step 2: Writing Project Details (Unit 3)</h2>
+                <div class="zh-label" id="t3zhS2">第二步：撰写项目详情（单元三）</div>
+                <p>For writing Project details (Implementation + Amount of funding requested), identify duration and action of each phase on Notes of meeting.</p>
+                <div class="zh-text" id="t3zhS2a">撰写项目详情（执行计划 + 申请资助金额）时，请从会议记录中识别各阶段的时间及行动。</div>
+
+                <h3 style="margin-top:12px; color:#2980b9;">a. Implementation Formula / 执行计划公式</h3>
+                <ul>
+                    <li>The project will be completed in three stages/phases, each lasting XXX months/weeks.</li>
+                </ul>
+                <div class="zh-text" id="t3zhS2b1"><ul><li>项目将分三个阶段进行，每阶段为期XXX个月/周。</li></ul></div>
+                <ul>
+                    <li>In phase 1, we will [verb]..., in phase 2, we will [verb]...</li>
+                </ul>
+                <div class="zh-text" id="t3zhS2b2"><ul><li>在第一阶段，我们将……；在第二阶段，我们将……</li></ul></div>
+                <ul>
+                    <li>In phase 3, / In the final phase, ...</li>
+                </ul>
+                <div class="zh-text" id="t3zhS2b3"><ul><li>在第三阶段 / 在最后阶段，……</li></ul></div>
+
+                <h3 style="margin-top:12px; color:#2980b9;">b. Amount of Funding Requested Formula / 申请资助金额公式</h3>
+                <ul>
+                    <li>It is estimated that a total of $xxxxx will be required for the project. For details of the breakdown, please refer to the attachment.</li>
+                </ul>
+                <div class="zh-text" id="t3zhS2c1"><ul><li>项目预计所需资金总额为$xxxxx。详情请参阅附件。</li></ul></div>
+                <ul>
+                    <li>(Alternative) The project is estimated to cost around $xxxxx. The details of the breakdown are attached for your information.</li>
+                </ul>
+                <div class="zh-text" id="t3zhS2c2"><ul><li>（替代写法）项目预计成本约为$xxxxx。费用明细已附上供参考。</li></ul></div>
+
+                <h3 style="margin-top:14px; color:#1a5276;">Examples / 范例</h3>
+                <div class="project-section">
+                    <p><strong>Example 1 — Film / Drama Project:</strong></p>
+                    <p><strong>a. Implementation:</strong> The project will be completed in three phases, each lasting two months. In phase 1, we will finalise the screenplay and cast suitable actors.</p>
+                    <div class="zh-text" id="t3zhE4a"><strong>范例一 — 电影/戏剧项目：</strong></div>
+                    <div class="zh-text" id="t3zhE4b"><strong>a. 执行计划：</strong>项目将分三个阶段进行，每阶段为期两个月。在第一阶段，我们将敲定剧本并挑选合适的演员。</div>
+                    <p>In phase 2, necessary filming permits will be obtained before scheduling rehearsals. Filming will also be conducted to capture the scripted scenes.</p>
+                    <div class="zh-text" id="t3zhE4c">在第二阶段，将先取得所需的拍摄许可证，再安排排练，并进行拍摄以捕捉剧本中的场景。</div>
+                    <p>In the final phase, we will edit the footage and test the submission entry on multiple devices to ensure technical compatibility.</p>
+                    <div class="zh-text" id="t3zhE4d">在最后阶段，我们将剪辑影片，并在多个设备上测试提交条目，以确保技术兼容性。</div>
+                    <p><strong>b. Amount of funding requested:</strong> It is estimated that a total of $1,000,000 will be required for the project. For details of the breakdown, please refer to the attachment.</p>
+                    <div class="zh-text" id="t3zhE4e"><strong>b. 申请资助金额：</strong>项目预计所需资金总额为1,000,000港元。详情请参阅附件。</div>
+                </div>
+                <div class="project-section">
+                    <p><strong>Example 2 — Neon Art Exhibition:</strong></p>
+                    <p><strong>a. Implementation:</strong> The project will be executed in three stages, each spanning three weeks. In stage 1, we will send invitations to local neon artists and co-create artworks with them.</p>
+                    <div class="zh-text" id="t3zhE5a"><strong>范例二 — 霓虹灯艺术展览：</strong></div>
+                    <div class="zh-text" id="t3zhE5b"><strong>a. 执行计划：</strong>项目将分三个阶段进行，每阶段为期三周。在第一阶段，我们将向本地霓虹灯艺术家发出邀请，并与他们共同创作艺术品。</div>
+                    <p>In stage 2, the exhibition will be installed at a public venue. Interactive workshops will also be incorporated.</p>
+                    <div class="zh-text" id="t3zhE5c">在第二阶段，展览将在公共场所设置，并加入互动工作坊。</div>
+                    <p>In the final stage, we will conduct random interviews with visitors and collect their feedback to evaluate the project's impact for future development.</p>
+                    <div class="zh-text" id="t3zhE5d">在最后阶段，我们将随机访问参观者并收集反馈，以评估项目对未来发展的影响。</div>
+                    <p><strong>b. Amount of funding requested:</strong> The project is estimated to cost around $400,000. The details of the breakdown are attached for your information.</p>
+                    <div class="zh-text" id="t3zhE5e"><strong>b. 申请资助金额：</strong>项目预计成本约为400,000港元。费用明细已附上供参考。</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Step 3: Writing Justification for Funding (Unit 4)</h2>
+                <div class="zh-label" id="t3zhS3">第三步：撰写资助理由（单元四）</div>
+                <p>For writing Justification, identify 3 benefits on your handwritten notes. Use the following vocabulary and grammatical structures:</p>
+                <div class="zh-text" id="t3zhS3a">撰写资助理由时，请从手写笔记中识别三项益处，并运用以下词汇和语法结构：</div>
+                <ul>
+                    <li><strong>Benefit 1:</strong> The project will + provide / offer / feature / give + [Benefit 1]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS3b1"><ul><li><strong>益处一：</strong>项目将 + 提供/展示/带来 + [益处一]</li></ul></div>
+                <ul>
+                    <li><strong>Elaboration:</strong> verb+ing (e.g. strengthening / encouraging) + [result / elaboration]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS3b2"><ul><li><strong>阐述：</strong>动词+ing（如加强/促进）+ [结果/阐述]</li></ul></div>
+                <ul>
+                    <li><strong>Benefit 2:</strong> Additionally, / Moreover, / In addition, it / the project will + [Benefit 2]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS3b3"><ul><li><strong>益处二：</strong>此外 / 而且 / 与此同时，该项目将 + [益处二]</li></ul></div>
+                <ul>
+                    <li><strong>Elaboration:</strong> which + [result / elaboration]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS3b4"><ul><li><strong>阐述：</strong>which + [结果/阐述]</li></ul></div>
+                <ul>
+                    <li><strong>Alignment with Funder:</strong> Furthermore, / Also, this project's aim closely aligns with / is in line with the mission and values of [funder].</li>
+                </ul>
+                <div class="zh-text" id="t3zhS3b5"><ul><li><strong>与资助方的契合：</strong>再者，本项目的目标与[资助方]的使命及价值观高度契合。</li></ul></div>
+
+                <h3 style="margin-top:14px; color:#1a5276;">Examples / 范例</h3>
+                <div class="project-section">
+                    <p><strong>Example 1 (Creative Industry):</strong> The competition will provide a platform for our emerging creators to showcase their work, strengthening the industry's creative pipeline.</p>
+                    <div class="zh-text" id="t3zhE6a"><strong>范例一（创意产业）：</strong>比赛将为新晋创作者提供展示作品的平台，加强业界的创意储备。</div>
+                    <p>In addition, the funding will enable us to secure essential production resources, which helps to ensure high-quality post-production work.</p>
+                    <div class="zh-text" id="t3zhE6b">此外，资助将使我们能够获取必要的制作资源，有助于确保高质量的后期制作工作。</div>
+                    <p>Furthermore, the aim of the project closely aligns with the mission of the Cultural and Creative Industries Development Agency. It will contribute greatly to the sustainable growth of Hong Kong's cultural and creative industries.</p>
+                    <div class="zh-text" id="t3zhE6c">再者，本项目的目标与创意香港的使命高度契合，将大大促进香港文化创意产业的可持续发展。</div>
+                </div>
+                <div class="project-section">
+                    <p><strong>Example 2 (Neon Art & Heritage):</strong> The neon exhibition will highlight the craftsmanship and cultural significance of neon art, encouraging the public to rediscover this unique visual heritage.</p>
+                    <div class="zh-text" id="t3zhE7a"><strong>范例二（霓虹灯艺术与文化遗产）：</strong>霓虹灯展览将突出霓虹灯艺术的工艺及文化意义，鼓励公众重新认识这一独特的视觉遗产。</div>
+                    <p>Local artists will also have a platform to experiment with light-based media, which will foster creative exchange.</p>
+                    <div class="zh-text" id="t3zhE7b">本地艺术家亦将获得一个试验光媒体的平台，促进创意交流。</div>
+                    <p>Moreover, the project's aim is in line with the mission and values of the CreateSmart Initiative, resulting in promoting design appreciation and cultural preservation in the community.</p>
+                    <div class="zh-text" id="t3zhE7c">此外，本项目的目标与「创意智优计划」的使命及价值观一致，有助促进社区对设计的欣赏及文化保育。</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Step 4: Writing Supplementary Information (Unit 5)</h2>
+                <div class="zh-label" id="t3zhS4">第四步：撰写补充资料（单元五）</div>
+                <p>For writing Supplementary information, identify the possible concern and solution and a concluding remark on your handwritten notes.</p>
+                <div class="zh-text" id="t3zhS4a">撰写补充资料时，请从手写笔记中识别可能的关注事项、解决方案及结语。</div>
+                <ul>
+                    <li><strong>1. Acknowledging Concern:</strong> We are aware that / We acknowledge / We understand that there might be concerns about ... [concern]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS4b1"><ul><li><strong>1. 承认关注事项：</strong>我们明白 / 我们理解可能会有……的顾虑</li></ul></div>
+                <ul>
+                    <li><strong>2. Proposing Solution:</strong> However, we will ensure that... / However, please rest assured that we will... [solution]</li>
+                </ul>
+                <div class="zh-text" id="t3zhS4b2"><ul><li><strong>2. 提出解决方案：</strong>然而，我们将确保…… / 请放心，我们将……</li></ul></div>
+                <ul>
+                    <li><strong>3. Concluding Remark:</strong> We are confident that the project / [verb-ing phrase], which [project aim], will [summary of benefits / positive outcome].</li>
+                </ul>
+                <div class="zh-text" id="t3zhS4b3"><ul><li><strong>3. 结语：</strong>我们坚信，该项目 / [动词+ing短语]，[项目目标]，将[益处/正面成果的总结]。</li></ul></div>
+
+                <h3 style="margin-top:14px; color:#1a5276;">Examples / 范例</h3>
+                <div class="project-section">
+                    <p><strong>Example 1 — Esports Tournament (Technical Server Lag):</strong></p>
+                    <p>We are aware that there might be concerns about technical issues, such as server lag during the tournament. However, please rest assured that we will secure high-performance servers and conduct pre-event stress tests so that a smooth experience for all participants will be guaranteed.</p>
+                    <div class="zh-text" id="t3zhE8a"><strong>范例一 — 电竞比赛（服务器延迟技术问题）：</strong></div>
+                    <div class="zh-text" id="t3zhE8b">我们明白可能会有技术问题的顾虑，例如比赛期间的服务器延迟。请放心，我们将确保使用高性能服务器，并在活动前进行压力测试，以保证所有参与者享有流畅的体验。</div>
+                    <p>We are confident that organising the esports tournament, which showcases the outstanding performance of local gamers, will foster a positive perception of competitive gaming among the public, gaining more support from society.</p>
+                    <div class="zh-text" id="t3zhE8c">我们坚信，举办是次电竞比赛，展示本地电竞选手的出色表现，将促进公众对竞技游戏的正面看法，赢得社会更多支持。</div>
+                </div>
+                <div class="project-section">
+                    <p><strong>Example 2 — EV Charging Station Network (Equipment Safety):</strong></p>
+                    <p>We understand that there might be concerns about the safety of the charging stations. However, we will ensure regular check-ups and maintenance of the charging equipment so that the risk of malfunctions can be minimized.</p>
+                    <div class="zh-text" id="t3zhE9a"><strong>范例二 — 电动车充电站网络（设备安全）：</strong></div>
+                    <div class="zh-text" id="t3zhE9b">我们理解可能会对充电站的安全性有所顾虑。然而，我们将确保定期检查及保养充电设备，以尽量减低故障风险。</div>
+                    <p>We are confident that installing the EV charging station network, which promotes sustainable transportation and a greener future, will have a significant and far-reaching impact on environmental conservation, promoting the adoption of EVs in the community.</p>
+                    <div class="zh-text" id="t3zhE9c">我们坚信，安装电动车充电网络，推动可持续交通及更绿色的未来，将对环保产生深远影响，促进社区采用电动车。</div>
+                </div>
+                <div class="project-section">
+                    <p><strong>Example 3 — Neon Installation Exhibition (Electrical Safety):</strong></p>
+                    <p>We acknowledge that there might be concerns about the safety of neon installations. However, we are committed to ensuring that all artworks comply with electrical safety standards and undergo professional inspection before being displayed in order to minimise risks.</p>
+                    <div class="zh-text" id="t3zhE10a"><strong>范例三 — 霓虹灯装置展览（电力安全）：</strong></div>
+                    <div class="zh-text" id="t3zhE10b">我们承认可能会对霓虹灯装置的安全性有所顾虑。然而，我们致力于确保所有艺术品符合电力安全标准，并在展出前进行专业检查，以尽量减低风险。</div>
+                    <p>We are confident that the neon exhibition, which supports local creative talent, will generate meaningful cultural impact and inspire interest in preserving the city's design legacy.</p>
+                    <div class="zh-text" id="t3zhE10c">我们坚信，支持本地创意人才的霓虹灯展览，将产生有意义的文化影响，并激发人们保存城市设计遗产的兴趣。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let showZh = true;
+        function toggleLang() {
+            showZh = !showZh;
+            document.body.classList.toggle('hide-zh', !showZh);
+        }
+        function switchTab(idx) {
+            document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+            document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === idx));
+        }
+    </script>
+</body>
+</html>
